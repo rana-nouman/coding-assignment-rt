@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  nestjs:
+    container_name: nestjs
+    build: .
+    ports:
+      - '3001:3000'
+    volumes:
+      - ./src:/backend/src
+      - ./test:/backend/test
+    command: npm run start:dev
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: nestjs_db
+      MYSQL_USER: guest
+      MYSQL_PASSWORD: guest
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-db:/var/lib/mysql
+
+volumes:
+  mysql-db:

@@ -3,22 +3,22 @@
 import { useEffect, useState } from 'react';
 
 export default function Page() {
-	const [tasks, setTasks] = useState([]);
+	const [books, setbooks] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:3001/tasks')
+		fetch('http://localhost:3001/books')
 			.then((response) => response.json())
-			.then((data) => setTasks(data))
-			.catch((error) => console.error('Error fetching tasks:', error));
+			.then((data) => setbooks(data))
+			.catch((error) => console.error('Error fetching books:', error));
 	}, []);
 
 	return (
 		<div>
-			<h1>Tasks</h1>
+			<h1>books</h1>
 			<ul>
-				{tasks.map((task) => (
-					<li key={task.id}>
-						<strong>{task.name}:</strong> {task.description}
+				{books.map((book) => (
+					<li key={book.id}>
+						<strong>{book.name}:</strong> {book.category}
 					</li>
 				))}
 			</ul>

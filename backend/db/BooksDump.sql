@@ -16,29 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `task`
+-- Table structure for table `book`
 --
 
-DROP TABLE IF EXISTS `task`;
+DROP TABLE IF EXISTS `book`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `task` (
+CREATE TABLE `book` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `completed` tinyint NOT NULL DEFAULT '0',
+  `category` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `task`
+-- Dumping data for table `book`
 --
 
-LOCK TABLES `task` WRITE;
-/*!40000 ALTER TABLE `task` DISABLE KEYS */;
-INSERT INTO `task` VALUES (1,'task 1','this is the description of task 1',1),(2,'task 2','this is the description of task 2',1),(3,'task 3','this is the description of task 3',1),(4,'task 4','this is the description of task 4',1),(5,'task 5','this is the description of task 5',1),(6,'task 6','this is the description of task 6',1),(7,'task 7','this is the description of task 7',1),(8,'task 8','this is the description of task 8',1),(9,'task 9','this is the description of task 9',1),(10,'task 10','this is the description of task 10',1);
-/*!40000 ALTER TABLE `task` ENABLE KEYS */;
+LOCK TABLES `book` WRITE;
+/*!40000 ALTER TABLE `book` DISABLE KEYS */;
+INSERT INTO `book` VALUES (1,'The Catcher in the Rye','Fiction'),(2,'To Kill a Mockingbird','Fiction'),(3,'Sapiens: A Brief History of Humankind','History'),(4,'Harry Potter and the Sorcerer\'s Stone','Fantasy'),(5,'A People\'s History of the United States','History'),(6,'The Hobbit','Fantasy'),(7,'Principles: Life and Work','Business'),(8,'A Game of Thrones','Fantasy'),(9,'The Lies of Locke Lamora ','Fantasy'),(10,'The Night Circus','Fantasy');
+/*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-03-10  8:16:05
+-- Dump completed on 2025-03-10  9:30:24

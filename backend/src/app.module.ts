@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { TaskController } from './task/task.controller';
-import { TaskService } from './task/task.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Task } from './task/task.entity';
+import { Book } from './book/book.entity';
+import { BookService } from './book/book.service';
+import { BookController } from './book/book.controller';
 
 @Module({
   imports: [
@@ -15,12 +15,12 @@ import { Task } from './task/task.entity';
       username: 'guest',
       password: 'guest',
       database: 'nestjs_db',
-      entities: [Task],
+      entities: [Book],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Task]),
+    TypeOrmModule.forFeature([Book]),
   ],
-  controllers: [AppController, TaskController],
-  providers: [AppService, TaskService],
+  controllers: [AppController, BookController],
+  providers: [AppService, BookService],
 })
 export class AppModule {}

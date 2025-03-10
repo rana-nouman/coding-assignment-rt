@@ -25,6 +25,7 @@ services:
       - '3306:3306'
     volumes:
       - mysql-db:/var/lib/mysql
+      - ./db/TasksDump.sql:/docker-entrypoint-initdb.d/TasksDump.sql
 
 volumes:
   mysql-db:

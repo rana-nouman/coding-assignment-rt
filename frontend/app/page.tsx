@@ -18,7 +18,7 @@ export default function Page() {
 			<ul>
 				{books.map((book) => (
 					<li key={book.id}>
-						<strong>{book.name}:</strong> {book.category}
+						<strong>{book.name}:</strong> {book.category_id}
 					</li>
 				))}
 			</ul>

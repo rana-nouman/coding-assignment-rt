@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Book } from './book/book.entity';
 import { BookService } from './book/book.service';
 import { BookController } from './book/book.controller';
+import { Category } from './category/category.entity';
+import { CategoryService } from './category/category.service';
+import { CategoryController } from './category/category.controller';
 
 @Module({
   imports: [
@@ -15,12 +18,12 @@ import { BookController } from './book/book.controller';
       username: 'guest',
       password: 'guest',
       database: 'nestjs_db',
-      entities: [Book],
+      entities: [Book, Category],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Book]),
+    TypeOrmModule.forFeature([Book, Category]),
   ],
-  controllers: [AppController, BookController],
-  providers: [AppService, BookService],
+  controllers: [AppController, BookController, CategoryController],
+  providers: [AppService, BookService, CategoryService],
 })
 export class AppModule {}
